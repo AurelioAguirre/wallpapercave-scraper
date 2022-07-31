@@ -1,5 +1,5 @@
 import requests as r
-import shutil
+import shutil, os
 from bs4 import BeautifulSoup as bs
 
 class Wallpapercave:
@@ -34,11 +34,19 @@ class Wallpapercave:
 				dl_imgs.append(adress)
 
 		dl_imgs = set(dl_imgs)
+
+		write_images(dl_imgs, headers)
+
+	def write_images(self, dl_imgs, headers):
+		current_d = os.getcwd()
+		image_dir = f"{current_d}/images"
+		if not os.isdir(image_dir):
+			os.mkdir(image_dir)
 		for num, image in enumerate(dl_imgs):
 			imgurl = self.http + self.default + "/" + image
 			dl_img = r.get(imgurl,  headers=headers, stream=True)
 			if dl_img.status_code == 200:
-				with open(f"./images/image_{num}.jpg", "wb") as f:
+				with open(f"{image_dir}/image_{num}.jpg", "wb") as f:
 					dl_img.raw.decode_content = True
 					shutil.copyfileobj(dl_img.raw, f)
 

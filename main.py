@@ -9,7 +9,9 @@ def main(url):
 	check = wp.is_website(url)
 	if check:
 		site = wp(url)
-	site.get_images()
+		site.get_images()
+	else:
+		print("...")
 	
 if __name__ == "__main__":
 	main()
