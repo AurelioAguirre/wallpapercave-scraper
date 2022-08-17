@@ -4,8 +4,7 @@ from bs4 import BeautifulSoup as bs
 
 class Wallpapercave:
 	headers = {"User-Agent":"MadeUpBrowser 1.0"}
-	default = "wallpapercave.com"
-	http = "https://"
+	default = "https://wallpapercave.com/"
 
 	def __init__ (self, url):
 		self.is_default = False
@@ -21,18 +20,26 @@ class Wallpapercave:
 			return False
 
 	def get_images(self):
-		page = r.get(self.url, headers=self.headers)
-		soup = bs(page.content, "html.parser")
-		img_tags = soup.find_all("img")
 		dl_imgs = []
 		adress = ""
-		for i in img_tags:
-			if "/fwp" in i["src"]:
-				adress = i["src"].replace("/fwp", "/wp")
-			elif "fuwp" in i["src"]:
-				adress = i["src"].replace("/fuwp", "/uwp" ) 
-			if adress != "":
-				dl_imgs.append(adress)
+		page = r.get(self.url, headers=self.headers)
+		soup = bs(page.content, "html.parser")
+		if "search" in self.url or self.url == self.default:
+			img_tags = soup.find_all("img")
+			for i in img_tags:
+				if "/fwp" in i["src"]:
+					adress = i["src"].replace("/fwp", "/wp")
+				elif "fuwp" in i["src"]:
+					adress = i["src"].replace("/fuwp", "/uwp" ) 
+				if adress != "":
+					dl_imgs.append(adress)
+		elif "-wallpapers" in self.url:
+			class_tags = soup.find_all(class_="wpinkw")
+			for i in class_tags:
+				if "/w/" in i["href"]:
+					adress = i["href"].replace("/w/", "/wp/")
+					adress = adress + ".jpg"
+					dl_imgs.append(adress)
 
 		dl_imgs = set(dl_imgs)
 
@@ -45,12 +52,11 @@ class Wallpapercave:
 		if os.path.isdir(image_dir):
 			dirinfo = list(os.walk(image_dir))
 			l = len(dirinfo[0][2])
-
 		else:
 			os.mkdir(image_dir)
 
 		for num, image in enumerate(dl_imgs):
-			imgurl = self.http + self.default + "/" + image
+			imgurl = self.default + image
 			if "webp" not in imgurl:
 				dl_img = r.get(imgurl,  headers=self.headers, stream=True)
 				if dl_img.status_code == 200:

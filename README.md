@@ -1,9 +1,12 @@
-# wallpapercave-scraper
+# wallpapercave-scraper 0.3
+
 A simple Python script that will scrape images from wallpapercave.com and install them into a folder called images.
 
-Under Development.
+Now works for front page, all searches, and all categories.
 
-Still doesn't work for categories, but works for front page, and any search.
+Under development:
+
+    Interface improvements
 
 
 How to use:
@@ -17,7 +20,6 @@ Python dependencies are:
 
     click
     requests
-    shutil
     bs4
 
 All the latest versions as of today 27th of July 2022.
