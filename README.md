@@ -16,11 +16,11 @@ If you have python 3 installed, simple run:
     python main.py [URL]
 
 The url can be ommitted, it will default to https://wallpapercave.com/
-Python dependencies are:
+For the Python dependencies you can cd into wallpapercave-scraper and then run:
 
-    click
-    requests
-    bs4
+    pip3 install requirements.txt
+    
+    
 
 All the latest versions as of today 27th of July 2022.
 
@@ -29,5 +29,4 @@ Program can also be run using the binary file in the dist folder. Simply run as 
 
 This typically looks like this (making sure you are in the dist folder):
 
-    chmod +x wpc-scraper
-    ./wpc-scraper
+    .\wpc-scraper
