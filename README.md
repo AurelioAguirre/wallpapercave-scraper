@@ -19,7 +19,7 @@ https://www.python.org/downloads/windows/
 
 Step 2
 
-Open CMD
+    Open CMD
 
 
 Step 3
