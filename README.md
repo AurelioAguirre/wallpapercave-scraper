@@ -38,7 +38,7 @@ If you have python 3 installed on PATH, simple run:
 
     python main.py [URL]    
 
-All the latest versions as of today 20th of September 2022.
+ This all works as of 20th of September 2022.
 
 
 Program can also be run using the binary file in the dist folder. Simply run as any executable in Windows 10.
