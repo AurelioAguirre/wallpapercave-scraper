@@ -24,6 +24,8 @@ Step 2
 
 Step 3
 
+Install git from https://git-scm.com/download/win and then:
+
     git clone https://github.com/Atkoset/kerei-scraper.git
 
 Step 4
