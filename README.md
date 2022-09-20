@@ -11,9 +11,22 @@ Under development:
 
 How to use:
 
-If you have python 3 installed on PATH, simple run:
+Step 1
 
-    python main.py [URL]
+Install the latest version of python for Windows 10/11 and make sure to install it on PATH.
+https://www.python.org/downloads/windows/
+
+
+Step 2
+
+Open CMD
+
+
+Step 3
+
+    git clone https://github.com/Atkoset/kerei-scraper.git
+
+Step 4
 
 The url can be ommitted, it will default to https://wallpapercave.com/
 For the Python dependencies you can copy and then run:
@@ -21,7 +34,9 @@ For the Python dependencies you can copy and then run:
     cd kerei-scraper
     pip3 install requirements.txt
     
-    
+If you have python 3 installed on PATH, simple run:
+
+    python main.py [URL]    
 
 All the latest versions as of today 20th of September 2022.
 
