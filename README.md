@@ -1,6 +1,6 @@
-# wallpapercave-scraper 0.3
+# kerei-scraper 0.3
 
-A simple Python script that will scrape images from wallpapercave.com and install them into a folder called images.
+A fork of the wallpaper-scraper Python script that will scrape images from wallpapercave.com and install them into a folder called images.
 
 Now works for front page, all searches, and all categories.
 
@@ -11,23 +11,40 @@ Under development:
 
 How to use:
 
-If you have python 3 installed, simple run:
+Step 1
 
-    python main.py [URL]
+Install the latest version of python for Windows 10/11 and make sure to install it on PATH.
+https://www.python.org/downloads/windows/
+
+
+Step 2
+
+    Open CMD
+
+
+Step 3
+
+Install git from https://git-scm.com/download/win and then:
+
+    git clone https://github.com/Atkoset/kerei-scraper.git
+
+Step 4
 
 The url can be ommitted, it will default to https://wallpapercave.com/
-Python dependencies are:
+For the Python dependencies you can copy and then run:
 
-    click
-    requests
-    bs4
+    cd kerei-scraper
+    pip3 install requirements.txt
+    
+If you have python 3 installed on PATH, simple run:
 
-All the latest versions as of today 27th of July 2022.
+    python main.py [URL]    
+
+ This all works as of 20th of September 2022.
 
 
-Program can also be run using the binary file in the dist folder. Simply run as any executable in Linux. (No Windows or Mac version as of yet.)
+Program can also be run using the binary file in the dist folder. Simply run as any executable in Windows 10.
 
 This typically looks like this (making sure you are in the dist folder):
 
-    chmod +x wpc-scraper
-    ./wpc-scraper
+    .\wpc-scraper

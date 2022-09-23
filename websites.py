@@ -3,7 +3,7 @@ import shutil, os
 from bs4 import BeautifulSoup as bs
 
 class Wallpapercave:
-	headers = {"User-Agent":"MadeUpBrowser 1.0"}
+	headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0"}
 	default = "https://wallpapercave.com/"
 
 	def __init__ (self, url):
